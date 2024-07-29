@@ -26,7 +26,7 @@ RUN export PYENV_HOME
 RUN git clone --depth 1 https://github.com/pyenv/pyenv.git $PYENV_HOME && \
     rm -rfv $PYENV_HOME/.git
 
-ENV PATH $PYENV_HOME/shims:$PYENV_HOME/bin:$PATH
+ENV PATH=$PYENV_HOME/shims:$PYENV_HOME/bin:$PATH
 
 RUN pyenv install $PYTHON_VERSION
 RUN pyenv global $PYTHON_VERSION
